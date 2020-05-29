@@ -1,44 +1,34 @@
 package OOP.src;
 
-// import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Scanner;
 // import OOP.src.Employee;
 
 public class App {
+    static ArrayList<Buah> listBuah = new ArrayList<Buah>();
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) throws Exception {
-        // System.out.println("Hello, World!");
 
-        // int salary = 50_000;
-        // int overtime = 5;
-        // int payPerHours = 100;
+        while (true) {
+            System.out.println("Hello, Selamat datang di toko buah!");
+            System.out.println("1. Tambah Buah");
+            System.out.println("2. List buah");
+            System.out.println("3. Exit");
 
-        // Employee orang = new Employee();
-        // bisa pake var, java yang nentuin type nya
-        // var orang = new Employee();
+            System.out.print("masukkan pilihan anda: "); // output
+            int inputMenu = scanner.nextInt(); // input
+            scanner.nextLine();
 
-        Employee orang = new Employee(50_000, 100);
-
-        // Scanner scanner = new Scanner(System.in);
-        // System.out.print("Input Salary: ");
-        // orang.setSalary(scanner.nextInt());
-
-        // System.out.print("Input Overtime: ");
-        // orang.setOvertime(scanner.nextInt());
-
-        // System.out.print("Input Pay per Hour: ");
-        // orang.setPayPerHour(scanner.nextInt());
-
-        // System.out.println(calculateWage(orang.getSalary(), orang.getOvertime(),
-        // orang.getPayPerHour()));
-
-        System.out.println(orang.calculateWage());
-        // System.out.println(Employee.employeeCount);
-    }
-
-    public static int calculateWage(int salary, int overtime, int payPerHours) {
-        return salary + (overtime * payPerHours);
-    }
-
-    public static void testing() {
-        System.out.println("Testing");
+            if (inputMenu == 1) {
+                Menu.tambahBuah();
+                // tampilListBuah();
+            } else if (inputMenu == 2) {
+                Menu.tampilListBuah();
+            } else if (inputMenu == 3) {
+                System.out.println("you're already exit");
+                break;
+            }
+        }
     }
 }
