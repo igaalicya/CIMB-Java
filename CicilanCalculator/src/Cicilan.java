@@ -16,10 +16,12 @@ public class Cicilan {
     }
 
     public void setHargaAwal(int hargaAwal) {
-        if (hargaAwal <= 1_000_000 && hargaAwal >= 100_000_000) {
+        if (hargaAwal >= 1_000_000 && hargaAwal <= 100_000_000) {
+            this.hargaAwal = hargaAwal;
+        } else {
             throw new IllegalArgumentException("harga harus diantara 1.000.000 - 100.000.000");
         }
-        this.hargaAwal = hargaAwal;
+
     }
 
     public int getDurasi() {
